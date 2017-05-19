@@ -45,20 +45,6 @@ public class SolrQueryService {
 	private void processQueryResponse(QueryResponse queryResponse) {
 	}
 
-	//TODO: Read QueryResponse and QueryResponseBase classes.
-	public void processQuery(String queryStr , SolrQueryParameters solrQueryParameters)
-	{ 
-		SolrClient solrClient = solrService.loadSolrJFromCurrentConfiguration();
-		SolrQuery solrQuery = createSolrQuery(queryStr , solrQueryParameters);
-		try {
-			QueryResponse queryResponse = solrClient.query(solrQuery);
-			processQueryResponse(queryResponse);
-		} catch (SolrServerException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
 
 	/**
 	 * Creates a SolrQuery Object from a String passed as a parameters. 
@@ -73,8 +59,4 @@ public class SolrQueryService {
 		return solrQuery;
 	}
 	
-	private SolrQuery createSolrQuery(String queryStr, SolrQueryParameters solrQueryParameters) {
-		return null;
-	}
-
 }

@@ -1,8 +1,5 @@
 package org.hubotek.solr.util;
 
-import java.util.function.Function;
-
-
 public class FieldConcatOperator {
 
 	private static char delimiter = ',';
