@@ -1,19 +1,22 @@
-package org.hubotek.solr.client.query;
+package org.hubotek.model.solr;
 
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.MappedSuperclass;
 
 import org.hubotek.Base;
 
 @MappedSuperclass
-public class SolrQueryBase implements Base<Long>{
+@Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
+public class QueryBase implements Base<Long>{
 
 	private static final long serialVersionUID = -4194796974627338479L;
 	
 	@Id
 	private Long id; 
 	
-	public SolrQueryBase() {
+	public QueryBase() {
 	}
 
 	@Override
